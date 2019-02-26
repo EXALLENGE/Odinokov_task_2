@@ -10,7 +10,6 @@ word_for_game = words[rand] # слово по рандомному индекс�
 for _ in word_for_game: # форматируем слово в ****
     shadow += '*'
 
-print(words[rand], shadow)
 while True:
     print('Guess a letter:', end='')
     prospective_letter = str(input()) # вводим предполагаемую букву
@@ -19,6 +18,7 @@ while True:
     where_is_letter = [] # список с индексами мест, на которых находится данная буква
     i = 0
     number_of_mistake = 0
+
     if prospective_letter in word_for_game:
         print('Hit!')
         for _ in word_for_game:
@@ -45,8 +45,7 @@ while True:
         if number_of_mistake == 5:
             print('You lost!')
             break
+
     if '*' not in shadow:
         print('You won!')
         break
-
-
